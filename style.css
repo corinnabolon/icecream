@@ -1,0 +1,44 @@
+:root {
+  --main-bg-color: #EFB495;
+  --card-bg-color: #EFD595;
+  --secondary-color: #EF9595;
+  --accent-color: #EBEF95;
+}
+
+main {
+  background-color: var(--main-bg-color);
+  font-family: 'Oswald', sans-serif;
+  font-size: 16pt;
+}
+
+.card {
+  padding: 70px 20px 25px 20px;
+  border: 1px solid black;
+  background-color: var(--card-bg-color);
+}
+
+.large-card {
+  height: 90vh;
+  margin: 30px;
+  padding: 20px 20px 25px 20px;
+  border: 1px solid black;
+  background-color: var(--card-bg-color);
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  border: var(--accent-color);
+  color: var(--accent-color)
+}
+
+.btn:hover {
+  background-color: var(--main-bg-color);
+  transition: .5s;
+}
+
+.card-text {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 26pt;
+  text-shadow: brown 1px 1px 2px;
+}
