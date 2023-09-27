@@ -15,6 +15,11 @@ const iceCream = [{
   quantity: 0
 }]
 
+let cheeseCake = { name: 'cheese cake', quantity: 0, price: 5.00 }
+// the objects in these arrays of objects do have names, they're just toppings[0] or whatever
+//another way to do it is give it a variable name like above, and just add  that to the array, though there is no particular reason to do that
+//the "shop" object below is saved into a variable, and often is called a dictionary because it includes a lot of things in it we can reference
+
 const toppings = [{
   name: 'Sprinkles',
   quantity: 0,
@@ -29,8 +34,45 @@ const toppings = [{
   name: 'Cookie Chunks',
   price: .5,
   quantity: 0
-}]
+},
+  cheeseCake
+]
 
+//we can use shop.toppings[0].name or shop["toppings"][0].name <--this lets us use it in a function if we want to pass in a parameter which can be either toppings or iceCream
+
+const shop = {
+  toppings: [{
+    name: 'Sprinkles',
+    quantity: 0,
+    price: .25
+  },
+  {
+    name: 'Chocolate Chips',
+    price: .25,
+    quantity: 0
+  },
+  {
+    name: 'Cookie Chunks',
+    price: .5,
+    quantity: 0
+  }],
+
+  iceCream: [{
+    name: 'Cookie Dough',
+    price: 1.25,
+    quantity: 0
+  },
+  {
+    name: 'Vanilla',
+    price: 1,
+    quantity: 0
+  },
+  {
+    name: 'Strawberry',
+    price: 1.25,
+    quantity: 0
+  }]
+}
 
 // !SECTION
 
@@ -57,9 +99,10 @@ function order(flavor) {
 }
 
 // function order(type, flavor) {
-//   let orderedFlavor = type.find(kind => kind.name == flavor)
-//   if (orderedFlavor) {
-//     orderedFlavor.quantity++
+//   let order = shop[type].find(kind => kind.name == flavor)
+//   console.log(order)
+//   if (order) {
+//     order.quantity++
 //   }
 //   drawCost()
 // }
@@ -124,7 +167,6 @@ function checkout() {
 
   Swal.fire({
     title: 'Are you sure you want to check out?',
-    text: "Do you want more toppings?",
     icon: 'question',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
